@@ -1,0 +1,7 @@
+{
+  "name": "miapp_JSON",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
