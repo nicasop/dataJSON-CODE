@@ -1,9 +1,50 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
     <ion-title>Profesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  {{profession.name}}
+  <ion-grid fixed>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="4">
+        <img [src]="profession.photo" [alt]="profession.name">
+      </ion-col>
+      <ion-col size="8">
+        <ion-list>
+          <ion-item>
+            <ion-label> {{profession.name}} </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label> {{profession.address}} </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label> {{profession.email}} </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label> {{profession.profesion}} </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="logo-facebook" ></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="logo-linkedin"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
