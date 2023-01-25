@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Profession } from '../models/profession.models';
 import { User } from '../models/user.models';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataJSONService {
 
-  constructor( private http:HttpClient) { }
+  constructor( private http:HttpClient, private inApp:InAppBrowser) { }
 
 
   getUsers():Observable<User[]>{
@@ -17,7 +18,12 @@ export class DataJSONService {
   }
 
   getProfessions():Observable<Profession[]>{
-    return this.http.get<Profession[]>("https://raw.githubusercontent.com/nicasop/dataJSON/main/proffesion.json");
+    return this.http.get<Profession[]>("https://raw.githubusercontent.com/nicasop/dataJSON/main/profession.json");
   }
+
+  open_link(ruta:string){
+    this.inApp.create(ruta,'_system');
+  }
+
 
 }

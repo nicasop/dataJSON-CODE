@@ -29,8 +29,8 @@ export class HomePage{
     });
   }
 
-  getProfession(name:string){
-    this.profession = this.professions.filter(prof => prof.name == name)[0];
+  getProfession(id:number){
+    this.profession = this.professions.filter(prof => prof.id == id)[0];
     this.nav.navigateForward("/profession",{
       "queryParams":{
         "profession":this.profession

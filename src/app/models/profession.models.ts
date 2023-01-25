@@ -1,4 +1,5 @@
 export interface Profession {
+    id:        number;
     name:      string;
     photo:     string;
     address:   string;
